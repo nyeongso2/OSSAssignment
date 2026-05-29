@@ -1,7 +1,6 @@
 from sklearn import datasets, metrics
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-
+from sklearn.neighbors import KNeighborsRegressor
 
 # 당뇨병 데이터셋 로드
 diabetes = datasets.load_diabetes()
@@ -18,8 +17,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 print(f"X_train shape: {X_train.shape}")
 print(f"X_test shape: {X_test.shape}")
 
-# 선형 회귀 모델 학습
-model = LinearRegression()
+# KNN 회귀 모델 학습
+model = KNeighborsRegressor(n_neighbors=5)
 model.fit(X_train, y_train)
 
 # 예측
