@@ -26,7 +26,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 # 성능 평가
-r2 = metrics.r2_score(y_test, y_pred)
+mae = metrics.mean_absolute_error(y_test, y_pred)
 
 print(f"\nModel Performance:")
-print(f"R2 Score: {r2:.4f}")
+print(f"MAE: {mae:.4f}")
+
